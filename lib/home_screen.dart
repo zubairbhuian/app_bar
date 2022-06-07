@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hospital_ui/custom_clip_path.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -23,12 +24,20 @@ class MyHomePage extends StatelessWidget {
               end: Alignment.topCenter),
         )),
       ),
-      body: Column(
-        children: [
-          Container(
-            color: Colors.amber,
-            height: 120,
-          )
-        ],
+      body: Center(
+        child: ClipPath(
+          clipper: CustomClipPth(),
+          child: Container(
+              // width: 200,
+              height: 218,
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                Color.fromARGB(255, 45, 202, 50),
+                Color.fromARGB(255, 174, 238, 26)
+              ], begin: Alignment.topCenter, end: Alignment.bottomRight)),
+              child: const Center(
+                child: Text('This is demo text'),
+              )),
+        ),
       ));
 }
