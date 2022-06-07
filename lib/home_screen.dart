@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hospital_ui/demo.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -23,12 +24,13 @@ class MyHomePage extends StatelessWidget {
               end: Alignment.topCenter),
         )),
       ),
-      body: Column(
-        children: [
-          Container(
-            color: Colors.amber,
-            height: 120,
-          )
-        ],
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: ((context) => const Demo())));
+          },
+          child: const Text('Next Page'),
+        ),
       ));
 }
